@@ -1,0 +1,10 @@
+# Normalise line endings so the repository stays clean on Windows checkouts.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.gif binary
+*.pkg binary
+*.tex binary
+*.whl binary
+*.mp4 binary

@@ -1,0 +1,27 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Vendored wheels downloaded by tools/fetch_dep.py
+tools/lib/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local extraction output / test scratch
+/out/
+/_testtmp/
+/_diag/
+/venv/
+.venv/

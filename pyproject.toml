@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wepkg"
+version = "0.1.0"
+description = "Extract images, video and other assets from Wallpaper Engine .pkg / .tex files"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "yuyuyu0721" }]
+keywords = ["wallpaper-engine", "steam", "pkg", "tex", "dxt", "extractor", "workshop"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Environment :: Console",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+  "Topic :: Utilities",
+]
+
+# Pillow is needed to write PNG output; lz4 only for LZ4-compressed textures.
+dependencies = [
+  "Pillow>=9",
+  "lz4>=4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pillow>=9"]
+
+[project.urls]
+Homepage = "https://github.com/yuyuyu0721/wallpaper-engine-extractor"
+Issues = "https://github.com/yuyuyu0721/wallpaper-engine-extractor/issues"
+
+[project.scripts]
+wepkg = "wepkg.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
