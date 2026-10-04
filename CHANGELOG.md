@@ -25,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   required, and a dependency-free fallback runner.
 - `tools/validate_library.py` for validating the reader against a real
   workshop library.
+- Simplified Chinese README (`README.zh-CN.md`), cross-linked with the English
+  one.
 
 [Unreleased]: https://github.com/yuyuyu0721/wallpaper-engine-extractor/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/yuyuyu0721/wallpaper-engine-extractor/releases/tag/v0.1.0

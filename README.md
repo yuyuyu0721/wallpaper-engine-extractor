@@ -15,6 +15,8 @@ Wallpaper Engine keeps each downloaded wallpaper in a Steam workshop folder:
 This tool unpacks `scene.pkg` and converts the textures inside it into ordinary
 files you can open, edit, or re-use.
 
+**Languages:** English | [简体中文](README.zh-CN.md)
+
 ## Highlights
 
 - **Knows the real payload type.** Many wallpapers are not images at all: the
