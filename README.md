@@ -202,7 +202,24 @@ src/wepkg/
 ├── ffmpeg.py     optional ffmpeg discovery
 └── cli.py        command-line interface
 tests/            synthetic-sample tests (no game files needed)
-tools/            validation and helper scripts
+tools/            validation, smoke test and helper scripts
+```
+
+## Development
+
+```bash
+python -m pip install -e ".[dev]"   # or: pip install pytest pillow lz4
+python -m pytest tests -q           # unit tests
+python tools/smoke_test.py          # build a package and extract it end to end
+python tools/validate_library.py <workshop-folder>   # check real wallpapers
+```
+
+`tools/smoke_test.py` drives the real CLI and asserts on the files it produces,
+so it catches packaging and wiring problems that unit tests miss. It needs no
+game files either — it builds its own package from synthetic samples.
+
+CI runs the unit tests and the smoke test on Linux, Windows and macOS against
+Python 3.9 and 3.12, then builds an sdist and a wheel.
 ```
 
 ## Contributing

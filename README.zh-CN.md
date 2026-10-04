@@ -192,8 +192,23 @@ src/wepkg/
 ├── ffmpeg.py     可选的 ffmpeg 探测
 └── cli.py        命令行界面
 tests/            合成样本测试（无需游戏文件）
-tools/            验证与辅助脚本
+tools/            验证、冒烟测试与辅助脚本
 ```
+
+## 开发
+
+```bash
+python -m pip install -e ".[dev]"   # 或者：pip install pytest pillow lz4
+python -m pytest tests -q           # 单元测试
+python tools/smoke_test.py          # 构造一个包并端到端提取
+python tools/validate_library.py <创意工坊目录>   # 校验真实壁纸
+```
+
+`tools/smoke_test.py` 会驱动**真实的命令行**并检查产出文件，所以能抓到单元测试
+覆盖不到的打包和接线问题。它同样不需要游戏文件——自己用合成样本造包。
+
+CI 会在 Linux、Windows、macOS 上针对 Python 3.9 和 3.12 跑单元测试和冒烟测试，
+然后构建 sdist 和 wheel。
 
 ## 参与贡献
 

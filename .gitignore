@@ -23,5 +23,9 @@ Thumbs.db
 /out/
 /_testtmp/
 /_diag/
+/_smoke_tmp/
+/.pytest_tmp/
+/pytest-cache-files-*/
+/pytest-of-*/
 /venv/
 .venv/

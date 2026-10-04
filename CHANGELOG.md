@@ -6,6 +6,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- `tools/smoke_test.py`, an end-to-end check that drives the real CLI over a
+  synthetic package and asserts on the files it produces.
+
+### Fixed
+
+- CI installed only the test dependencies, so the CLI smoke step failed with
+  `No module named wepkg` on every runner. The workflow now installs the
+  package itself, which also brings the console script and packaging metadata
+  under test.
+- `pytest` now keeps its temporary directories inside the checkout
+  (`basetemp`), so the suite runs where the system temp directory is restricted.
+
 ## [0.1.0]
 
 ### Added

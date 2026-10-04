@@ -28,13 +28,22 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pytest pillow lz4
 
+      - name: Install the package
+        # Installing the package itself (not just its test dependencies) is what
+        # makes the console script and the packaging metadata part of CI.
+        run: python -m pip install --no-deps -e .
+
       - name: Run tests
         run: python -m pytest tests -q
 
       - name: Smoke-test the CLI
         run: |
+          wepkg --version
           python -m wepkg --version
           python -m wepkg --help
+
+      - name: Extract a synthetic package end to end
+        run: python tools/smoke_test.py
 
   package:
     name: build sdist and wheel

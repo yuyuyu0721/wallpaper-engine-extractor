@@ -48,3 +48,7 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+# Keep pytest's temporary directories inside the checkout.  The default comes
+# from the system temp directory, which some sandboxes and CI images make
+# unusable; a repo-relative base always works.
+basetemp = ".pytest_tmp"
